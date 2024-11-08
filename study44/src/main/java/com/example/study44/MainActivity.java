@@ -1,5 +1,5 @@
 package com.example.study44;
-import android.app.Activity;
+
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,7 +10,6 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
