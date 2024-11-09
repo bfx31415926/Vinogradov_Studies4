@@ -1,3 +1,7 @@
+/* Добавил в 48 урок возможность перехватывать клики на элементы списка:
+    Очень важен атрибут {android:descendantFocusability="blocksDescendants"}
+    в файле item.xml
+ */
 package com.example.study48;
 
 import java.util.ArrayList;
@@ -16,6 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
     // имена атрибутов для Map
+    final String LOG_TAG = "myLogs";
     final String ATTRIBUTE_NAME_TEXT = "text";
     final String ATTRIBUTE_NAME_CHECKED = "checked";
     final String ATTRIBUTE_NAME_IMAGE = "image";
@@ -58,5 +63,12 @@ public class MainActivity extends AppCompatActivity {
         // определяем список и присваиваем ему адаптер
         lvSimple = (ListView) findViewById(R.id.lvSimple);
         lvSimple.setAdapter(sAdapter);
+        lvSimple.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                Log.d(LOG_TAG, "itemClick: position = " + position + ", id = "
+                        + id);
+            }
+        });
     }
 }
